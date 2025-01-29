@@ -1,2 +1,2 @@
-import RegisterDoctorPage from '@/components/hospital/hospital_dashboard/register_doctor/RegisterDoctorPage'
-export default RegisterDoctorPage
+import LandingPage from '@/components/landing/LandingPage'
+export default LandingPage
