@@ -1,4 +1,4 @@
-import { Users, LayoutDashboard, Settings, Plus } from 'lucide-react'
+import { AppWindow, MessageCircle, FileText, Settings } from 'lucide-react'
 import {
   Sidebar,
   SidebarContent,
@@ -14,19 +14,19 @@ import {
 
 const mainMenuItems = [
   {
-    title: 'Doctors',
-    icon: Users,
-    url: '/',
-  },
-  {
-    title: 'Create Doctor',
-    icon: Plus,
-    url: '/',
-  },
-  {
     title: 'Applications',
-    icon: LayoutDashboard,
-    url: '/',
+    icon: AppWindow,
+    url: '/test/doctor/dashboard/applications',
+  },
+  {
+    title: 'Patient Chats',
+    icon: MessageCircle,
+    url: '/test/doctor/dashboard/patient_chats',
+  },
+  {
+    title: 'Patient Details',
+    icon: FileText,
+    url: '/test/doctor/dashboard/patient_details',
   },
 ]
 
@@ -39,7 +39,7 @@ export function AppSidebar() {
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel className="text-sm font-semibold">
-            Hospital Dashboard
+            Doctor Dashboard
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
