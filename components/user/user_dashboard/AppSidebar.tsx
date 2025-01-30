@@ -5,6 +5,7 @@ import {
   Globe,
   Hotel,
   Settings,
+  User,
 } from 'lucide-react'
 import {
   Sidebar,
@@ -20,9 +21,14 @@ import {
 
 const mainMenuItems = [
   {
+    title: 'Profile',
+    icon: User,
+    url: '/test/user/dashboard/profile',
+  },
+  {
     title: 'Browse Hospitals',
     icon: Users,
-    url: '/test/user/dashboard/',
+    url: '/test/user/dashboard/start_journey',
   },
   {
     title: 'Doctor Chat',
