@@ -1,4 +1,12 @@
-import { Users, LayoutDashboard, Settings, Plus } from 'lucide-react'
+import {
+  Users,
+  MessageCircle,
+  FileText,
+  Globe,
+  Hotel,
+  Settings,
+  User,
+} from 'lucide-react'
 import {
   Sidebar,
   SidebarContent,
@@ -14,19 +22,34 @@ import {
 
 const mainMenuItems = [
   {
-    title: 'Doctors',
+    title: 'Profile',
+    icon: User,
+    url: '/test/user/dashboard/profile',
+  },
+  {
+    title: 'Browse Hospitals',
     icon: Users,
-    url: '/',
+    url: '/test/user/dashboard/start_journey',
   },
   {
-    title: 'Create Doctor',
-    icon: Plus,
-    url: '/',
+    title: 'Doctor Chat',
+    icon: MessageCircle,
+    url: '/test/user/dashboard/doctor_chat/',
   },
   {
-    title: 'Applications',
-    icon: LayoutDashboard,
-    url: '/',
+    title: 'Documents',
+    icon: FileText,
+    url: '/test/user/dashboard/documents/',
+  },
+  {
+    title: 'E-visa',
+    icon: Globe,
+    url: '/test/user/dashboard/evisa/',
+  },
+  {
+    title: 'Flights and Hotels',
+    icon: Hotel,
+    url: '/test/user/dashboard/',
   },
 ]
 
@@ -39,7 +62,7 @@ export function AppSidebar() {
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel className="text-sm font-semibold">
-            Hospital Dashboard
+            User Dashboard
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>

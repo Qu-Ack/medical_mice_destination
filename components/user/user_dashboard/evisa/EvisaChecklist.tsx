@@ -1,6 +1,5 @@
 import React from 'react'
-import { ChevronDownIcon, DotFilledIcon } from '@radix-ui/react-icons'
-import { Button } from '@/components/ui/button'
+import { DotFilledIcon } from '@radix-ui/react-icons'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
 import {
@@ -9,6 +8,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
+import { Button } from '@/components/ui/button'
 
 const steps = [
   {
@@ -21,7 +21,7 @@ const steps = [
     step: 'step2',
     title: 'Gather Required Documents',
     description: (
-      <ul className="space-y-1 text-sm">
+      <ul className="space-y-1 text-xs">
         <li className="flex items-center">
           <DotFilledIcon className="mr-2 h-3 w-3" /> Valid passport (min. 6
           months validity)
@@ -71,7 +71,7 @@ const steps = [
     step: 'step8',
     title: 'Final Steps',
     description: (
-      <ul className="space-y-1 text-sm">
+      <ul className="space-y-1 text-xs">
         <li className="flex items-center">
           <DotFilledIcon className="mr-2 h-3 w-3" /> Wait for processing
           (processing time varies)
@@ -92,54 +92,47 @@ const steps = [
   },
 ]
 
-const EvisaChecklistPage = () => {
+const EvisaChecklist = () => {
   return (
-    <section id="evisaChecklist" className="min-h-screen bg-neutral-100 py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-6 flex flex-col gap-2 text-center">
-          <h2 className="mb-2 text-4xl font-bold">
-            eVisa Application Checklist
-          </h2>
-          <p className="text-lg text-gray-600">
-            Follow these steps to ensure a smooth visa application process
-          </p>
-        </div>
+    <section id="evisaChecklist">
+      <div className="mb-6 text-center">
+        <h2 className="mb-2 text-3xl font-bold">Application Checklist</h2>
+        <p className="text-base text-gray-600">
+          Track your application progress
+        </p>
+      </div>
 
-        <div className="mx-auto max-w-3xl">
-          <Accordion type="single" collapsible className="w-full">
-            {steps.map(({ step, title, description }, index) => (
-              <AccordionItem value={step} key={step}>
-                <AccordionTrigger className="hover:no-underline">
-                  <div className="flex w-full items-center space-x-3">
-                    <Checkbox id={step} />
-                    <div className="flex flex-1 items-center justify-between">
-                      <Label
-                        htmlFor={step}
-                        className="text-lg font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                      >
-                        {index + 1}. {title}
-                      </Label>
-                    </div>
+      <div className="rounded-xl bg-white p-6 shadow-lg">
+        <Accordion type="single" collapsible className="w-full">
+          {steps.map(({ step, title, description }, index) => (
+            <AccordionItem value={step} key={step}>
+              <AccordionTrigger className="hover:no-underline">
+                <div className="flex w-full items-center space-x-3">
+                  <Checkbox id={step} />
+                  <div className="flex flex-1 items-center justify-between">
+                    <Label
+                      htmlFor={step}
+                      className="text-sm font-medium leading-none"
+                    >
+                      {index + 1}. {title}
+                    </Label>
                   </div>
-                </AccordionTrigger>
-                <AccordionContent>
-                  <div className="pl-8 text-base text-gray-600">
-                    {description}
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-
-        <div className="mt-8 text-center">
-          <Button className="h-12 w-48 bg-blue-600 text-base">
-            Click to Apply
-          </Button>
-        </div>
+                </div>
+              </AccordionTrigger>
+              <AccordionContent>
+                <div className="pl-8 text-sm text-gray-600">{description}</div>
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </div>
+      <div className="mt-6 flex justify-center">
+        <Button className="rounded-lg bg-blue-600 px-6 py-3 text-white shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+          Get eVisa now
+        </Button>
       </div>
     </section>
   )
 }
 
-export default EvisaChecklistPage
+export default EvisaChecklist
