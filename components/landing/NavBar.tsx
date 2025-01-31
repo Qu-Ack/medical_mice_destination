@@ -11,7 +11,7 @@ const navigationOptions = [
 ]
 
 // Profile Component
-function Profile({user}: {user:User}) {
+function Profile({ user }: { user: User }) {
   return <Link href={`/dashboard/patient/${user.ID}`}>{user.Name}</Link>
 }
 
@@ -19,18 +19,19 @@ function Profile({user}: {user:User}) {
 function LogInSignUp() {
   return (
     <Link href="/register/">
-      <Button className="px-4 py-2 text-base">Register Now</Button>
+      <Button className="rounded-full bg-blue-600 px-4 py-2 text-base">
+        Register Now
+      </Button>
     </Link>
   )
 }
 
 // NavBar Component
 export default function NavBar({ isLoggedIn = false }) {
-
-  const {user} = useUserContext()
+  const { user } = useUserContext()
 
   return (
-    <nav className="shadow-md">
+    <nav className="bg-gray-900 text-white shadow-md">
       <div className="container mx-auto flex h-16 items-center px-4 md:px-8">
         {/* Logo Section */}
         <div className="flex-shrink-0 text-3xl font-bold text-blue-500">
@@ -42,7 +43,7 @@ export default function NavBar({ isLoggedIn = false }) {
           <div className="hidden gap-6 md:flex">
             {navigationOptions.map((option) => (
               <Link href={option.link} key={option.title}>
-                <Button variant="link" className="text-lg">
+                <Button variant="link" className="text-lg text-white">
                   {option.title}
                 </Button>
               </Link>
@@ -52,7 +53,7 @@ export default function NavBar({ isLoggedIn = false }) {
 
         {/* Profile or Log In */}
         <div className="flex flex-shrink-0 gap-4">
-          {user ? <Profile user={user}/> : <LogInSignUp />}
+          {user ? <Profile user={user} /> : <LogInSignUp />}
         </div>
 
         {/* Mobile Navigation Menu (for smaller screens) */}
