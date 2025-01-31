@@ -1,3 +1,5 @@
+import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
+
 import {
   Users,
   MessageCircle,
@@ -6,7 +8,7 @@ import {
   Hotel,
   Settings,
   User,
-  Send,
+  Plane,
 } from 'lucide-react'
 import {
   Sidebar,
@@ -49,7 +51,7 @@ const mainMenuItems = [
   },
   {
     title: 'Flights',
-    icon: Send,
+    icon: Plane,
     url: '/demo/dashboard/user/',
   },
   {
@@ -59,7 +61,7 @@ const mainMenuItems = [
   },
 ]
 
-export function AppSidebar() {
+function AppSidebar() {
   return (
     <Sidebar>
       <SidebarHeader className="p-4">
@@ -103,5 +105,20 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarFooter>
     </Sidebar>
+  )
+}
+
+export default function UserDashboard_Layout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  return (
+    <SidebarProvider>
+      <div className="flex min-h-screen w-full">
+        <AppSidebar />
+        <main className="min-h-screen flex-1 p-8">{children}</main>
+      </div>
+    </SidebarProvider>
   )
 }

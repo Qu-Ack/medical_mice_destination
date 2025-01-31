@@ -2,7 +2,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import SidebarWrapper from '../../SidebarWrapper'
 
 function PatientDetailsContent() {
   // Mock patient data
@@ -141,11 +140,9 @@ function PatientDetailsContent() {
 
 function PatientDetails() {
   return (
-    <SidebarWrapper>
-      <div className="flex h-full flex-col">
-        <PatientDetailsContent />
-      </div>
-    </SidebarWrapper>
+    // <div className="flex h-full flex-col">
+    <PatientDetailsContent />
+    // </div>
   )
 }
 

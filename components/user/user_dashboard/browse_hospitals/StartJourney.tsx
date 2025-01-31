@@ -1,4 +1,3 @@
-import SidebarWrapper from '../SidebarWrapper'
 import { Button } from '@/components/ui/button'
 
 function StartJourneyButton() {
@@ -27,11 +26,9 @@ function Content() {
 
 const StartJourney = () => {
   return (
-    <SidebarWrapper>
-      <div className="flex h-full flex-col items-center justify-center bg-blue-50 p-8 text-center">
-        <Content />
-      </div>
-    </SidebarWrapper>
+    <div className="flex h-full flex-col items-center justify-center bg-blue-50 p-8 text-center">
+      <Content />
+    </div>
   )
 }
 

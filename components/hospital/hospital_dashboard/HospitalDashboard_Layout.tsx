@@ -1,3 +1,4 @@
+import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
 import { Users, LayoutDashboard, Settings, Plus } from 'lucide-react'
 import {
   Sidebar,
@@ -16,21 +17,21 @@ const mainMenuItems = [
   {
     title: 'Doctors',
     icon: Users,
-    url: '/',
+    url: '/demo/dashboard/hospital/doctor_team',
   },
   {
     title: 'Create Doctor',
     icon: Plus,
-    url: '/',
+    url: '/demo/dashboard/hospital/register_doctor',
   },
   {
     title: 'Applications',
     icon: LayoutDashboard,
-    url: '/',
+    url: '/demo/dashboard/hospital/applications',
   },
 ]
 
-export function AppSidebar() {
+function AppSidebar() {
   return (
     <Sidebar>
       <SidebarHeader className="p-4">
@@ -74,5 +75,20 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarFooter>
     </Sidebar>
+  )
+}
+
+export default function HospitalDashboard_Layout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  return (
+    <SidebarProvider>
+      <div className="flex min-h-screen w-full">
+        <AppSidebar />
+        <main className="min-h-screen flex-1 p-8">{children}</main>
+      </div>
+    </SidebarProvider>
   )
 }

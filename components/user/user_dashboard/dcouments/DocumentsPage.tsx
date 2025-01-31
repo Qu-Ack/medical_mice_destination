@@ -2,7 +2,7 @@ import { FileText, Calendar, Download, Upload } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import SidebarWrapper from '../SidebarWrapper'
+import SidebarWrapper from '../UserDashboard_Layout'
 
 interface Document {
   id: number
@@ -170,11 +170,7 @@ const DocumentsContainer = () => {
 }
 
 const DocumentsPage = () => {
-  return (
-    <SidebarWrapper>
-      <DocumentsContainer />
-    </SidebarWrapper>
-  )
+  return <DocumentsContainer />
 }
 
 export default DocumentsPage

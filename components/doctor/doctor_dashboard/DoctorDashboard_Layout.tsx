@@ -1,3 +1,5 @@
+import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
+
 import { AppWindow, MessageCircle, FileText, Settings } from 'lucide-react'
 import {
   Sidebar,
@@ -16,21 +18,21 @@ const mainMenuItems = [
   {
     title: 'Applications',
     icon: AppWindow,
-    url: '/test/doctor/dashboard/applications',
+    url: '/demo/dashboard/doctor/applications',
   },
   {
     title: 'Patient Chats',
     icon: MessageCircle,
-    url: '/test/doctor/dashboard/patient_chats',
+    url: '/demo/dashboard/doctor/patient_chats',
   },
   {
     title: 'Patient Details',
     icon: FileText,
-    url: '/test/doctor/dashboard/patient_details',
+    url: '/demo/dashboard/doctor/patient_details',
   },
 ]
 
-export function AppSidebar() {
+function AppSidebar() {
   return (
     <Sidebar>
       <SidebarHeader className="p-4">
@@ -74,5 +76,20 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarFooter>
     </Sidebar>
+  )
+}
+
+export default function DoctorDashboard_Layout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  return (
+    <SidebarProvider>
+      <div className="flex min-h-screen w-full">
+        <AppSidebar />
+        <main className="min-h-screen flex-1 p-8">{children}</main>
+      </div>
+    </SidebarProvider>
   )
 }
