@@ -6,6 +6,7 @@ import {
   Hotel,
   Settings,
   User,
+  Send,
 } from 'lucide-react'
 import {
   Sidebar,
@@ -24,32 +25,37 @@ const mainMenuItems = [
   {
     title: 'Profile',
     icon: User,
-    url: '/test/user/dashboard/profile',
+    url: '/demo/dashboard/user/profile',
   },
   {
     title: 'Browse Hospitals',
     icon: Users,
-    url: '/test/user/dashboard/start_journey',
+    url: '/demo/dashboard/user/start_journey',
   },
   {
     title: 'Doctor Chat',
     icon: MessageCircle,
-    url: '/test/user/dashboard/doctor_chat/',
+    url: '/demo/dashboard/user/doctor_chat/',
   },
   {
     title: 'Documents',
     icon: FileText,
-    url: '/test/user/dashboard/documents/',
+    url: '/demo/dashboard/user/documents/',
   },
   {
     title: 'E-visa',
     icon: Globe,
-    url: '/test/user/dashboard/evisa/',
+    url: '/demo/dashboard/user/evisa/',
   },
   {
-    title: 'Flights and Hotels',
+    title: 'Flights',
+    icon: Send,
+    url: '/demo/dashboard/user/',
+  },
+  {
+    title: 'Hotels',
     icon: Hotel,
-    url: '/test/user/dashboard/',
+    url: '/demo/dashboard/user/',
   },
 ]
 

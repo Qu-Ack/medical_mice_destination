@@ -36,31 +36,10 @@ export default function LandingPage() {
   // we need to check auth after pressing these buttons if the user is not authed we can't proceed
 
   return (
-    <>
-      <main className="flex flex-col items-center justify-center">
-        <div className="container">
-          <Hero />
-        </div>
-      </main>
-
-      {/* For Daksh: Moving buttons to bottom of page for experimentation*/}
-      <div>
-        <button onClick={handleMedicalTourism} className="primary-button m-3">
-          Medical Tourism
-        </button>
-        <button onClick={handleMICE} className="primary-button m-3">
-          MICE
-        </button>
-        <button
-          onClick={handleDestinationWedding}
-          className="primary-button m-3"
-        >
-          Destination Weddings
-        </button>
-        <button onClick={handleLogin} className="primary-button m-3">
-          Log In With Google
-        </button>
+    <main className="flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 to-purple-50">
+      <div className="container">
+        <Hero />
       </div>
-    </>
+    </main>
   )
 }

@@ -3,6 +3,9 @@ import { Textarea } from '@/components/ui/textarea'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Button } from '@/components/ui/button'
+import Link from 'next/link'
+
+const recommendationsPageRoute = '/demo/browse_hospitals/recommendations/'
 
 // Combined steps and descriptions into a single array
 const steps = [
@@ -105,9 +108,11 @@ const Explain = () => {
         <div className="flex gap-6">
           <Button
             variant="default"
-            className="flex-1 rounded-lg bg-blue-500 py-4 text-base font-semibold text-white hover:bg-blue-600"
+            className="flex flex-1 rounded-lg bg-blue-500 py-4 text-base font-semibold text-white hover:bg-blue-600"
           >
-            Start Your Journey Now
+            <Link className="flex-1" href={recommendationsPageRoute}>
+              Start Your Journey Now
+            </Link>
           </Button>
           <Button
             variant="default"

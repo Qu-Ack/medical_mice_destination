@@ -2,11 +2,11 @@ import { Button } from '../ui/button'
 import Link from 'next/link'
 
 const navigationOptions = [
-  { title: 'Home', link: '/' },
-  { title: 'Testimonials', link: '/' },
-  { title: 'Services', link: '/' },
-  { title: 'Gallery', link: '/' },
-  { title: 'Contact', link: '/' },
+  { title: 'Home', link: '/demo/' },
+  { title: 'Testimonials', link: '/demon' },
+  { title: 'Services', link: '/demo' },
+  { title: 'Gallery', link: '/demo' },
+  { title: 'Contact', link: '/demo' },
 ]
 
 // Profile Component
@@ -24,7 +24,7 @@ function LogInSignUp() {
 }
 
 // NavBar Component
-export default function NavBar({ isLoggedIn = false }) {
+export default function NavBar({ isLoggedIn = true }) {
   return (
     <nav className="shadow-md">
       <div className="container mx-auto flex h-16 items-center px-4 md:px-8">
