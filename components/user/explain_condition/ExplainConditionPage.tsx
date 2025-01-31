@@ -100,7 +100,7 @@ const Explain = () => {
           </Label>
           <Textarea
             id="condition"
-            rows="8"
+            rows={8}
             className="w-full rounded-lg p-4 text-lg"
             placeholder="Describe your condition"
           />

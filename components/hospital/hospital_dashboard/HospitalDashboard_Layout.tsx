@@ -1,5 +1,12 @@
+<<<<<<< HEAD:components/hospital/hospital_dashboard/HospitalDashboard_Layout.tsx
 import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
 import { Users, LayoutDashboard, Settings, Plus } from 'lucide-react'
+=======
+import { usePathname } from 'next/navigation'
+import Link from 'next/link'
+import { Settings } from 'lucide-react'
+import { cn } from '@/lib/utils'
+>>>>>>> 0597cb36808017ef36f46c1c63cc48d7279c0944:components/hospital/hospital_dashboard/AppSidebar.tsx
 import {
   Sidebar,
   SidebarContent,
@@ -12,7 +19,9 @@ import {
   SidebarFooter,
   SidebarGroupLabel,
 } from '@/components/ui/sidebar'
+import { sidebarConfig } from './sideBarConfig'
 
+<<<<<<< HEAD:components/hospital/hospital_dashboard/HospitalDashboard_Layout.tsx
 const mainMenuItems = [
   {
     title: 'Doctors',
@@ -32,10 +41,22 @@ const mainMenuItems = [
 ]
 
 function AppSidebar() {
+=======
+interface AppSidebarProps {
+  dashboardType: keyof typeof sidebarConfig
+  userId: string
+}
+
+export function AppSidebar({ dashboardType, userId }: AppSidebarProps) {
+  const pathname = usePathname()
+  const menuItems = sidebarConfig[dashboardType]
+
+>>>>>>> 0597cb36808017ef36f46c1c63cc48d7279c0944:components/hospital/hospital_dashboard/AppSidebar.tsx
   return (
     <Sidebar>
       <SidebarHeader className="p-4">
         <h1 className="text-3xl font-bold text-blue-600">TBO</h1>
+        <p className="text-sm text-muted-foreground capitalize">{dashboardType} Portal</p>
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
@@ -44,16 +65,25 @@ function AppSidebar() {
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {mainMenuItems.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <a href={item.url} className="flex items-center space-x-2">
-                      <item.icon className="h-5 w-5" />
-                      <span>{item.title}</span>
-                    </a>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
+              {menuItems.map((item) => {
+                const url = typeof item.url === 'function' ? item.url(userId) : item.url
+                return (
+                  <SidebarMenuItem key={item.title}>
+                    <SidebarMenuButton asChild>
+                      <Link
+                        href={url}
+                        className={cn(
+                          "flex items-center space-x-2 w-full",
+                          pathname === url && "bg-accent text-accent-foreground"
+                        )}
+                      >
+                        <item.icon className="h-5 w-5" />
+                        <span>{item.title}</span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                )
+              })}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
@@ -64,10 +94,13 @@ function AppSidebar() {
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <a href="/settings" className="flex items-center space-x-2">
+                  <Link 
+                    href={`/dashboard/${dashboardType}/${userId}/settings`}
+                    className="flex items-center space-x-2"
+                  >
                     <Settings className="h-5 w-5" />
                     <span>Settings</span>
-                  </a>
+                  </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>
@@ -76,6 +109,7 @@ function AppSidebar() {
       </SidebarFooter>
     </Sidebar>
   )
+<<<<<<< HEAD:components/hospital/hospital_dashboard/HospitalDashboard_Layout.tsx
 }
 
 export default function HospitalDashboard_Layout({
@@ -92,3 +126,6 @@ export default function HospitalDashboard_Layout({
     </SidebarProvider>
   )
 }
+=======
+}
+>>>>>>> 0597cb36808017ef36f46c1c63cc48d7279c0944:components/hospital/hospital_dashboard/AppSidebar.tsx
