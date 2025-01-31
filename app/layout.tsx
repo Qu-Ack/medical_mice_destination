@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import NavBar from '@/components/landing/NavBar'
@@ -31,9 +31,9 @@ export default function RootLayout({
       >
         <ApolloProvider client={client}>
           <UserContextProvider>
-            <NavBar />
+            {/* <NavBar /> */}
             {children}
-            <Footer />
+            {/* <Footer /> */}
           </UserContextProvider>
         </ApolloProvider>
       </body>
