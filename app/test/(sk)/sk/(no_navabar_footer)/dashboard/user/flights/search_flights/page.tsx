@@ -1,2 +1,2 @@
-import BrowseFlightsPage from '@/components/user/user_dashboard/flights/BrowseFlightsPage'
-export default BrowseFlightsPage
+import SearchFlightsPage from '@/components/user/user_dashboard/flights/SearchFlightsPage'
+export default SearchFlightsPage
