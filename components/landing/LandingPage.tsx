@@ -1,9 +1,11 @@
 'use client'
 import { useRouter } from 'next/navigation'
+import backgroundImage from '@/public/landing_bg.jpeg'
 
 import * as React from 'react'
 
 import Hero from './Hero'
+import AltHero from './AltHero'
 
 export default function LandingPage() {
   const router = useRouter()
@@ -44,11 +46,19 @@ export default function LandingPage() {
     </main>
 =======
     <>
-      <main className="flex flex-col items-center justify-center">
-        <div className="container">
-          <Hero />
-        </div>
-      </main>
+      <div
+        className="relative bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${backgroundImage.src})` }}
+      >
+        {/* Overlay to dim the background */}
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+
+        <main className="relative z-10 flex flex-1 flex-col items-center justify-center">
+          <div className="container flex flex-1">
+            <AltHero />
+          </div>
+        </main>
+      </div>
     </>
 >>>>>>> 0597cb36808017ef36f46c1c63cc48d7279c0944
   )
