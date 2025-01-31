@@ -1,3 +1,5 @@
+// Simply import this into layout.tsx of user dashboard route
+
 import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
 
 import {

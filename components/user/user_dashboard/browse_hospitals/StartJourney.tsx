@@ -24,7 +24,7 @@ function Content() {
   )
 }
 
-const StartJourney = () => {
+const StartJourneyPage = () => {
   return (
     <div className="flex h-full flex-col items-center justify-center bg-blue-50 p-8 text-center">
       <Content />
@@ -32,4 +32,4 @@ const StartJourney = () => {
   )
 }
 
-export default StartJourney
+export default StartJourneyPage
