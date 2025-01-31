@@ -3,11 +3,11 @@ import { Button } from '../ui/button'
 import Link from 'next/link'
 
 const navigationOptions = [
-  { title: 'Home', link: '/' },
-  { title: 'Testimonials', link: '/' },
-  { title: 'Services', link: '/' },
-  { title: 'Gallery', link: '/' },
-  { title: 'Contact', link: '/' },
+  { title: 'Home', link: '/demo/' },
+  { title: 'Testimonials', link: '/demon' },
+  { title: 'Services', link: '/demo' },
+  { title: 'Gallery', link: '/demo' },
+  { title: 'Contact', link: '/demo' },
 ]
 
 // Profile Component
@@ -27,9 +27,13 @@ function LogInSignUp() {
 }
 
 // NavBar Component
+<<<<<<< HEAD
+export default function NavBar({ isLoggedIn = true }) {
+=======
 export default function NavBar({ isLoggedIn = false }) {
   const { user } = useUserContext()
 
+>>>>>>> 0597cb36808017ef36f46c1c63cc48d7279c0944
   return (
     <nav className="bg-gray-900 text-white shadow-md">
       <div className="container mx-auto flex h-16 items-center px-4 md:px-8">

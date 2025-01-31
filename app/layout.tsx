@@ -29,6 +29,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+<<<<<<< HEAD
+        {/* <NavBar /> */}
+        {children}
+        {/* <Footer /> */}
+=======
         <ApolloProvider client={client}>
           <UserContextProvider>
             {/* <NavBar /> */}
@@ -36,6 +41,7 @@ export default function RootLayout({
             {/* <Footer /> */}
           </UserContextProvider>
         </ApolloProvider>
+>>>>>>> 0597cb36808017ef36f46c1c63cc48d7279c0944
       </body>
     </html>
   )

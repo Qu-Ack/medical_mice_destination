@@ -8,7 +8,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import SidebarWrapper from '../SidebarWrapper'
 
 const mockDoctors = [
   {
@@ -33,47 +32,45 @@ const mockDoctors = [
 
 const DoctorTeamPage = () => {
   return (
-    <SidebarWrapper>
-      <div className="flex flex-col space-y-6">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <h1 className="text-2xl font-bold">Doctor List</h1>
-          </div>
-        </div>
-
-        <div className="flex flex-col gap-4 md:flex-row">
-          <div className="relative flex-1">
-            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 transform text-gray-500" />
-            <Input placeholder="Search doctors..." className="pl-10" />
-          </div>
-          <Select>
-            <SelectTrigger className="w-[180px]">
-              <div className="flex items-center space-x-2">
-                <Filter className="h-4 w-4" />
-                <SelectValue placeholder="Filter by" />
-              </div>
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="all">All Doctors</SelectItem>
-              <SelectItem value="cardiology">Cardiology</SelectItem>
-              <SelectItem value="neurology">Neurology</SelectItem>
-              <SelectItem value="pediatrics">Pediatrics</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
-
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {mockDoctors.map((doctor) => (
-            <DoctorCard
-              key={doctor.id}
-              name={doctor.name}
-              specialization={doctor.specialization}
-              registrationNumber={doctor.registrationNumber}
-            />
-          ))}
+    <div className="flex flex-col space-y-6">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center space-x-2">
+          <h1 className="text-2xl font-bold">Doctor List</h1>
         </div>
       </div>
-    </SidebarWrapper>
+
+      <div className="flex flex-col gap-4 md:flex-row">
+        <div className="relative flex-1">
+          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 transform text-gray-500" />
+          <Input placeholder="Search doctors..." className="pl-10" />
+        </div>
+        <Select>
+          <SelectTrigger className="w-[180px]">
+            <div className="flex items-center space-x-2">
+              <Filter className="h-4 w-4" />
+              <SelectValue placeholder="Filter by" />
+            </div>
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">All Doctors</SelectItem>
+            <SelectItem value="cardiology">Cardiology</SelectItem>
+            <SelectItem value="neurology">Neurology</SelectItem>
+            <SelectItem value="pediatrics">Pediatrics</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {mockDoctors.map((doctor) => (
+          <DoctorCard
+            key={doctor.id}
+            name={doctor.name}
+            specialization={doctor.specialization}
+            registrationNumber={doctor.registrationNumber}
+          />
+        ))}
+      </div>
+    </div>
   )
 }
 

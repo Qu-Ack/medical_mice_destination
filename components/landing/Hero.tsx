@@ -14,24 +14,22 @@ import Link from 'next/link'
 function LandingText() {
   return (
     <div className="flex w-1/2 flex-col gap-6">
-      <CardTitle className="text-7xl">
-        This is the Tagline for this website
-      </CardTitle>
+      <h1 className="font-display max-w-4xl text-5xl font-bold tracking-tight text-slate-900 sm:text-7xl">
+        Your Gateway to{' '}
+        <span className="relative whitespace-nowrap">
+          <span className="relative bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            World-Class Healthcare
+          </span>
+        </span>
+      </h1>
       <CardDescription className="text-xl">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat iure
-        magni laudantium nisi impedit hic iste aliquid debitis ducimus,
-        dignissimos omnis! Similique saepe minus rerum magnam architecto
-        doloribus, quos ad.
+        Discover affordable, high-quality medical treatments combined with the
+        opportunity to recover in serene, luxurious destinations. Your health
+        and comfort are our top priorities.
       </CardDescription>
       <div className="flex gap-4">
-        <Button className="rounded-full px-12 py-6 text-base shadow-md">
-          Task 1
-        </Button>
-        <Button
-          variant="outline"
-          className="rounded-full px-12 py-6 text-base shadow-md"
-        >
-          Task 2
+        <Button className="rounded-full border-2 border-blue-600 bg-blue-600 px-12 py-6 text-base shadow-md hover:bg-white hover:text-black">
+          Start your jounery now!
         </Button>
       </div>
     </div>

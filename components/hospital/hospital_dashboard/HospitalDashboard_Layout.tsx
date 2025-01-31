@@ -1,7 +1,12 @@
+<<<<<<< HEAD:components/hospital/hospital_dashboard/HospitalDashboard_Layout.tsx
+import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
+import { Users, LayoutDashboard, Settings, Plus } from 'lucide-react'
+=======
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { Settings } from 'lucide-react'
 import { cn } from '@/lib/utils'
+>>>>>>> 0597cb36808017ef36f46c1c63cc48d7279c0944:components/hospital/hospital_dashboard/AppSidebar.tsx
 import {
   Sidebar,
   SidebarContent,
@@ -12,9 +17,31 @@ import {
   SidebarMenuItem,
   SidebarHeader,
   SidebarFooter,
+  SidebarGroupLabel,
 } from '@/components/ui/sidebar'
 import { sidebarConfig } from './sideBarConfig'
 
+<<<<<<< HEAD:components/hospital/hospital_dashboard/HospitalDashboard_Layout.tsx
+const mainMenuItems = [
+  {
+    title: 'Doctors',
+    icon: Users,
+    url: '/demo/dashboard/hospital/doctor_team',
+  },
+  {
+    title: 'Create Doctor',
+    icon: Plus,
+    url: '/demo/dashboard/hospital/register_doctor',
+  },
+  {
+    title: 'Applications',
+    icon: LayoutDashboard,
+    url: '/demo/dashboard/hospital/applications',
+  },
+]
+
+function AppSidebar() {
+=======
 interface AppSidebarProps {
   dashboardType: keyof typeof sidebarConfig
   userId: string
@@ -24,6 +51,7 @@ export function AppSidebar({ dashboardType, userId }: AppSidebarProps) {
   const pathname = usePathname()
   const menuItems = sidebarConfig[dashboardType]
 
+>>>>>>> 0597cb36808017ef36f46c1c63cc48d7279c0944:components/hospital/hospital_dashboard/AppSidebar.tsx
   return (
     <Sidebar>
       <SidebarHeader className="p-4">
@@ -32,6 +60,9 @@ export function AppSidebar({ dashboardType, userId }: AppSidebarProps) {
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
+          <SidebarGroupLabel className="text-sm font-semibold">
+            Hospital Dashboard
+          </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {menuItems.map((item) => {
@@ -78,4 +109,23 @@ export function AppSidebar({ dashboardType, userId }: AppSidebarProps) {
       </SidebarFooter>
     </Sidebar>
   )
+<<<<<<< HEAD:components/hospital/hospital_dashboard/HospitalDashboard_Layout.tsx
 }
+
+export default function HospitalDashboard_Layout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  return (
+    <SidebarProvider>
+      <div className="flex min-h-screen w-full">
+        <AppSidebar />
+        <main className="min-h-screen flex-1 p-8">{children}</main>
+      </div>
+    </SidebarProvider>
+  )
+}
+=======
+}
+>>>>>>> 0597cb36808017ef36f46c1c63cc48d7279c0944:components/hospital/hospital_dashboard/AppSidebar.tsx
