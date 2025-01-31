@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+import LandingPage from '@/components/landing/LandingPage'
+export default LandingPage
+=======
 
 "use client"
 
@@ -27,3 +31,4 @@ export default function Test({params}: {params: {hospitalid: string}}) {
 
     return <BookAppointmentPage Hospital_Id={"das"}></BookAppointmentPage>
 }
+>>>>>>> 0597cb36808017ef36f46c1c63cc48d7279c0944

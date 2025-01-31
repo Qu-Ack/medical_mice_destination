@@ -1,0 +1,2 @@
+import HospitalDashboard_Layout from '@/components/hospital/hospital_dashboard/HospitalDashboard_Layout'
+export default HospitalDashboard_Layout

@@ -17,6 +17,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
+import Link from 'next/link'
 
 const hospitals = [
   {
@@ -202,8 +203,10 @@ const HospitalCard = ({
           </span>
         ))}
       </div>
-      <Button variant="outline" className="w-full">
-        View Details
+      <Button variant="outline" className="flex w-full">
+        <Link className="flex-1" href={'/demo/browse_hospitals/hospital_id'}>
+          View Details
+        </Link>
       </Button>
     </CardContent>
   </Card>
